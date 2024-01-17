@@ -1,8 +1,11 @@
 {
+  "resolutions": {
+    "react-refresh": "~0.14.0"},
   "expo": {
     "name": "my-app",
     "slug": "my-app",
     "version": "1.0.0",
+    "scheme": "your-app-scheme",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
