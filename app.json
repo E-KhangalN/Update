@@ -5,6 +5,7 @@
   "expo": {
     "name": "my-app",
     "slug": "my-app",
+    "main": "expo-router/entry",
     "version": "1.0.0",
     "scheme": "your-app-scheme",
     "orientation": "portrait",
@@ -28,8 +29,10 @@
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
     },
+          
     "plugins": [
       "expo-router"
     ]
