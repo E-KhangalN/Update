@@ -1,6 +1,7 @@
 {
   "resolutions": {
-    "react-refresh": "~0.14.0"},
+    "react-refresh": "~0.14.0"
+  },
   "expo": {
     "name": "my-app",
     "slug": "my-app",
@@ -28,6 +29,9 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-router"
+    ]
   }
 }
