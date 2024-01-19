@@ -1,27 +1,27 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import Movie from "../appc/Movie";
+import Movie from "../app/Movie";
 const Movies = () => {
   const movies = [
     {
       name: "Avengers",
       desc: "Superheroes team up to save the world.",
-      img: require("../appc/iimg/image7.jpg"),
+      img: require("../assets/iimg/image7.jpg"),
     },
     {
       name: "Spider-Man: Into the Apider-Verse",
       desc: "An animated adventure with multiple Spider-People.",
-      img: require("../appc/iimg/image8.jpg"),
+      img: require("../assets/iimg/image8.jpg"),
     },
     {
       name: "Iron man 3",
       desc: "Iron Man 3 is 2013 American superhero film based on the Marvel Comics character Oron Man",
-      img: require("../appc/iimg/image9.jpg"),
+      img: require("../assets/iimg/image9.jpg"),
     },
     {
       name: "Thor: Love and Thunder",
       desc: "Thor enlisth the help of Valkyrie. Korg and exgirlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.",
-      img: require("../appc/iimg/image10.jpg"),
+      img: require("../assets/iimg/image10.jpg"),
     },
   ];
   return (
