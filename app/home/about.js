@@ -1,5 +1,6 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
+import PagerView from "react-native-pager-view";
 const proImg = require("../../assets/iimg/pro.jpg");
 const About = () => {
   return (
@@ -41,6 +42,15 @@ const About = () => {
           </TouchableOpacity>
         </View>
         {/* Tab pages */}
+        <PagerView style={styles.viewPager} initialPage={0}>
+          <View style={styles.page} key="1">
+            <Text>gg</Text>
+            <Text>Swipe ➡️</Text>
+          </View>
+          <View style={styles.page} key="2">
+            <Text>Second page</Text>
+          </View>
+        </PagerView>
       </View>
     </View>
   );
@@ -99,6 +109,13 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 8,
+    flex: 1, // сул зайгаа бүтэн эзэл.
+  },
+  viewPager: {
     flex: 1,
+  },
+  page: {
+    justifyContent: "center",
+    alignItems: "center",
   },
 });
