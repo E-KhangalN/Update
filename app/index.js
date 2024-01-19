@@ -5,12 +5,12 @@ import { Link, Redirect } from "expo-router";
 const Page = () => {
   return (
     <Redirect href={"/home"} />
-    // <View>
-    //     <Text>Page</Text>
-    //     <Link href={'/home'} >Нүүр хуудас </Link>
-    //     <Link href={'/movies'} > Movies </Link>
-    //     <Link href={'/tic-tac'} >Tic tac </Link>
-    // </View>
+    //  <View>
+    //  <Text>Page</Text>
+    //  <Link href={'/home'} >Нүүр хуудас </Link>
+    //  <Link href={'/movies'} > Movies </Link>
+    //  <Link href={'/tic-tac'} >Tic tac </Link>
+    //  </View>
   );
 };
 

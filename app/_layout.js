@@ -21,7 +21,7 @@ export default function RootLayout() {
         }}
       />
       <Stack.Screen
-        name="tic-tac"
+        name="tic-tak"
         options={{
           title: "Тик так тоглоом",
         }}
