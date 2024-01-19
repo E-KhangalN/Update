@@ -22,6 +22,12 @@ const About = () => {
           </View>
         </View>
       </View>
+      {/* bio */}
+      <View style={styles.bio}>
+        <Text style={styles.bioName}>Md Sazid</Text>
+        <Text style={styles.bioDesc}>insta chalai na temon -.- Btw Hi :V</Text>
+        <Text style={styles.bioDesc}>Byeeeeeeeeeee.</Text>
+      </View>
     </View>
   );
 };
@@ -51,5 +57,13 @@ const styles = StyleSheet.create({
   followersItem: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  bio: {},
+  bioName: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  bioDesc: {
+    fontSize: 20,
   },
 });
