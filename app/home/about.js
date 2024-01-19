@@ -1,8 +1,15 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import React from "react";
+import React, { useState } from "react";
 import PagerView from "react-native-pager-view";
-const proImg = require("../../assets/iimg/pro.jpg");
+const postImg = require("../../assets/iimg/postIcon.png");
+const proImg = require("../../assets/iimg/userIcon.png");
 const About = () => {
+  const [selectedTab, setselectedTab] = useState(0);
+  const onPageChange = (data) => {
+    const pageNumber = data.nativeEvent.position;
+    console.log(pageNumber); // хуудас солигдоход солигдсон утга нь ийшээ орж ирж байгаа.
+    setselectedTab(pageNumber);
+  };
   return (
     <View style={styles.container}>
       {/* Толгой хэсэг */}
@@ -38,8 +45,26 @@ const About = () => {
           <Text style={styles.editText}> Хичээлүүд </Text>
         </TouchableOpacity>
       </View>
+      {/* Tab buttons */}
+      <View style={styles.btnContainer}>
+        <TouchableOpacity
+          style={[styles.btn, selectedTab === 0 && styles.active]}
+        >
+          {/*{ backgroundColor: "beige", flex: 1 } гэж энд нь стайлыг нь бичиж болдог. styles.btn -ийн оронд тавьна.*/}
+          <Image source={postImg} style={styles.img} />
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.btn, selectedTab === 1 && styles.active]}
+        >
+          <Image source={userImg} style={styles.img} />
+        </TouchableOpacity>
+      </View>
       {/* Tab pages */}
-      <PagerView style={styles.viewPager} initialPage={0}>
+      <PagerView
+        onPageSelected={onPageChange}
+        style={styles.viewPager}
+        initialPage={0}
+      >
         <View style={styles.page} key="1">
           <Text> First page </Text>
           <Text>Swipe ➡️</Text>
@@ -55,6 +80,18 @@ const About = () => {
 export default About;
 
 const styles = StyleSheet.create({
+  btn: {
+    backgroundColor: "lightblue",
+    flex: 1,
+    alignItems: "center",
+    paddingBottom: 16,
+    paddingTop: 14,
+  },
+  active: {
+    // энэ стайл сонгогдсон үед л харагдана.
+    // бордерийг зөвхөн доод талдаа тавья гэвэл яг доорхоор бичнэ.
+    borderBottomWidth: 2,
+  },
   proImg: {
     width: 107,
     height: 107,
@@ -77,6 +114,10 @@ const styles = StyleSheet.create({
   followersItem: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  btnContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
   },
   bio: {
     marginBottom: 8,
