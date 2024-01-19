@@ -40,6 +40,7 @@ const About = () => {
             <Text style={styles.editText}> Хичээлүүд </Text>
           </TouchableOpacity>
         </View>
+        {/* Tab pages */}
       </View>
     </View>
   );
@@ -98,5 +99,6 @@ const styles = StyleSheet.create({
   },
   container: {
     padding: 8,
+    flex: 1,
   },
 });
