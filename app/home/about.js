@@ -34,12 +34,12 @@ const About = () => {
         {/* Товч */}
         <View style={styles.edit}>
           <TouchableOpacity style={styles.editbtn}>
-            <Text style={styles.editText}> </Text>
+            <Text style={styles.editText}> Edit Profile </Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.editbtn}>
+            <Text style={styles.editText}> Хичээлүүд </Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.editbtn}>
-          <Text style={styles.editText}> </Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
