@@ -2,6 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import PagerView from "react-native-pager-view";
 const postImg = require("../../assets/iimg/postIcon.png");
+const proImg = require("../../assets/iimg/proImg.png");
 const userImg = require("../../assets/iimg/userIcon.png");
 const About = () => {
   const [selectedTab, setselectedTab] = useState(0);
@@ -32,9 +33,12 @@ const About = () => {
       </View>
       {/* bio */}
       <View style={styles.bio}>
-        <Text style={styles.bioName}>Md Sazid</Text>
-        <Text style={styles.bioDesc}>insta chalai na temon -.- Btw Hi :V</Text>
-        <Text style={styles.bioDesc}>Byeeeeeeeeeee.</Text>
+        <Text style={styles.bioName}>Э. Хангал</Text>
+        <Text style={styles.bioDes}>Тавтай морилно уу!</Text>
+        <Text style={styles.bioDesc}>
+          Заримдаа хэдхэн секунд л зориг гаргахад амьдралаа тэр чигээр нь
+          өөрчилж чадна.
+        </Text>
       </View>
       {/* Товч */}
       <View style={styles.edit}>
@@ -81,7 +85,7 @@ export default About;
 
 const styles = StyleSheet.create({
   btn: {
-    backgroundColor: "lightblue",
+    backgroundColor: "lightgray",
     flex: 1,
     alignItems: "center",
     paddingBottom: 16,
@@ -94,7 +98,7 @@ const styles = StyleSheet.create({
   },
   proImg: {
     width: 107,
-    height: 107,
+    height: 99,
     borderRadius: "50%",
     flex: 1,
   },
@@ -126,8 +130,11 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: "bold",
   },
+  bioDes: {
+    fontSize: 17,
+  },
   bioDesc: {
-    fontSize: 20,
+    fontSize: 15,
   },
   editbtn: {
     borderWidth: 1,
@@ -154,5 +161,9 @@ const styles = StyleSheet.create({
   page: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  img: {
+    width: 20,
+    height: 20,
   },
 });
