@@ -2,7 +2,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useState } from "react";
 import PagerView from "react-native-pager-view";
 const postImg = require("../../assets/iimg/postIcon.png");
-const proImg = require("../../assets/iimg/userIcon.png");
+const userImg = require("../../assets/iimg/userIcon.png");
 const About = () => {
   const [selectedTab, setselectedTab] = useState(0);
   const onPageChange = (data) => {
