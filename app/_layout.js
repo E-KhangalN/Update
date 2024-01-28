@@ -1,29 +1,17 @@
 import { Stack } from "expo-router";
+import { SafeAreaView, StatusBar } from "react-native";
 
-export default function RootLayout() {
+export default function Layout() {
   return (
     <Stack
       screenOptions={{
-        title: "Нүүр",
-        headerStyle: {
-          // backgroundColor: '#f4511e',
-        },
-        // headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
+        headerShown: false,
       }}
     >
       <Stack.Screen
-        name="movies"
+        name="post/[id]"
         options={{
-          title: "Киноны жагсаалт",
-        }}
-      />
-      <Stack.Screen
-        name="tic-tak"
-        options={{
-          title: "Тик так тоглоом",
+          title: "Posts",
         }}
       />
     </Stack>
