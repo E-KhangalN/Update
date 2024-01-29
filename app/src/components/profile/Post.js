@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { Link } from "expo-router";
-const ProfileImage = ({ data }) => {
+const Post = ({ data }) => {
   return (
     <Link href={"/post/" + data.id} asChild>
       <TouchableOpacity style={styles.button}>
@@ -11,7 +11,7 @@ const ProfileImage = ({ data }) => {
   );
 };
 
-export default ProfileImage;
+export default Post;
 
 const styles = StyleSheet.create({
   button: {
