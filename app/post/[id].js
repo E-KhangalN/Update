@@ -108,7 +108,7 @@ const Post = () => {
         </View>
         {/* view all comments */}
 
-        <Link href={"/modal"} asChild>
+        <Link href="/modal" asChild>
           <TouchableOpacity>
             <Text style={styles.viewAll}>
               View all {data.comments.length} comments
