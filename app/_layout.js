@@ -15,7 +15,7 @@ export default function Layout() {
         }}
       />
       <Stack.Screen
-        name="modal"
+        name="comments"
         options={{
           // Set the presentation mode to modal for our modal route.
           presentation: "modal",
