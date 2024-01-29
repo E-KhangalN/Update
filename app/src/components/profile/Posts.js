@@ -4,8 +4,8 @@ import PagerView from "react-native-pager-view";
 import { Link } from "expo-router";
 
 import Post from "./Post";
-const postImg = require("../../assets/img/postIcon.png");
-const userImg = require("../../assets/img/userIcon.png");
+const postImg = require("../../assets/iimg/userIcon.png");
+const userImg = require("../../assets/iimg/postIcon.png");
 const Posts = ({ data }) => {
   const [selectedTab, setSetselectedTab] = useState(0);
   const onPageChange = (data) => {
