@@ -141,26 +141,6 @@ const Post = () => {
             </Text>
           </TouchableOpacity>
         </Link>
-        {/* Comments*/}
-        {/* {data.comments?.map((comment) => (
-          <View style={[styles.row, styles.gap13]}>
-            <Image source={{ uri: comment.img }} style={styles.proImg} />
-            <View>
-              <Text style={styles.commentUser}>{comment.userId}</Text>
-              <Text style={styles.comment}>{comment.comment}</Text>
-            </View>
-          </View>
-        ))}
-         Write comment 
-        <View style={[styles.row, styles.gap13]}>
-          <Image source={{ uri: about.img }} style={styles.proImg} />
-          <View>
-            <TextInput
-              placeholder="Add a comment..."
-              placeholderTextColor={"#858585"}
-            />
-          </View> 
-        </View>*/}
       </View>
     </SafeAreaView>
   );
