@@ -92,6 +92,7 @@ const styles = StyleSheet.create({
   gap13: {
     gap: 13,
   },
+
   userId: {
     fontSize: 18,
     fontWeight: "bold",
