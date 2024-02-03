@@ -16,7 +16,7 @@ export default function HomeLayout() {
   учир уг iconoo linkeer хүрээлэнэ гэсэн үг. Линк дээрээ asChild гэсэн юм тодорхойлж өгдөг дотроо компонент функц ч ашиглачихсан учраас үүнийхээ урд    hred={" хаашаа шилжүүлэх гэж байгаа замаа бичиж өгдөг "}.
   Би үүнийг app -> direct message рүү шилжүүлэх гэж байгаад тэгэхдээ href="{/direct message}" гээд биччихнэ. Ингээд шилжчихнэ. 
    */
-    <Link>
+    <Link href={"/directmessage"} asChild>
       <TouchableOpacity style={styles.dmIcon}>
         <Feather name="send" size={24} color="black" />
       </TouchableOpacity>
