@@ -15,71 +15,90 @@ const Dm = () => {
   }
   const navigation =
     useNavigation(); /*энэ мөрний код хуудас шилжих код. Яг дор байрлах код хуудас шилжээд ороод ирэхэд ажиллана уг кодыг дотор нь тайлбарлая.*/
-  const Posts = ({ data }) => {
-    const [selectedTab, setSetselectedTab] = useState(0);
-    const onPageChange = (data) => {
-      const pageNumber = data.nativeEvent.position;
-      console.log(pageNumber);
-      setSetselectedTab(pageNumber);
-    };
-    // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна.
 
-    useEffect(() => {
-      navigation.setOptions({
-        headerShown: true,
-        headerBackTitleVisible: true,
-        headerBackTitle: "Direct",
-        headerTitle: "",
-        headerRight: () => (
-          <View style={styles.row}>
-            <TouchableOpacity>
-              <AntDesign name="videocamera" size={24} color="black" />
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <FontAwesome name="pencil-square-o" size={24} color="black" />
-            </TouchableOpacity>
-          </View>
-        ),
-      }); /* энэ код нь эхлээд navigation -ийнхээ options -ийг тохируулж байгаад таслалын урд 
+  const [selectedTab, setSetselectedTab] = useState(0);
+  const onPageChange = (data) => {
+    const pageNumber = data.nativeEvent.position;
+    console.log(pageNumber);
+    setSetselectedTab(pageNumber);
+  };
+  // navigation буюу хуудас өөрчлөгдөх бүрт доторхи кодыг ажиллуулна.
+  useEffect(() => {
+    navigation.setOptions({
+      headerShown: true,
+      headerBackTitleVisible: true,
+      headerBackTitle: "Direct",
+      headerTitle: "",
+      headerRight: () => (
+        <View style={styles.row}>
+          <TouchableOpacity>
+            <AntDesign name="videocamera" size={24} color="black" />
+          </TouchableOpacity>
+
+          <TouchableOpacity>
+            <FontAwesome name="pencil-square-o" size={24} color="black" />
+          </TouchableOpacity>
+        </View>
+      ),
+    }); /* энэ код нь эхлээд navigation -ийнхээ options -ийг тохируулж байгаад таслалын урд 
     талынх буюу headerShown: true энэ нь дэлгэцийн дээд талын хэсгийг харуул гэж байгаа билээ. headerBackTitleVisible: true нь ард талын backtitle -ийг нь харуул
     гэж байна. Яг үүний дараагийн үйлдэл нь backtitle -ийн нэрийг солих үйл явц явагдаж байна. Нэрийг солихдоо headerBackTitle:" өгөх нэрээ энд бичнэ " гэж солино. 
     Харин дээд хэсгийн голд харагддаг бичгийг солихдоо headerTitle:" өгөх нэрээ энд бичнэ " гэж солино. Гэвч хийх гэж байгаа зүйл дээр маань тийм нэр байхгүй учир тийм нэр сольхоос 
     өмнө анх файлын нэрээр орж ирдэг тэрийг байхгүй болгохын тулд нэр өгөх хэсгээ хоосон үлдээчихвэл юм үл үзэгдэнэ. Гол нь срингээ наах хэрэгтэй тэгэхгүй бол алдаа заана. 
     Харин одоо баруун талд нь байрлах icon-уудыг оруулья. icon -oo олохдоо мөн л гүүглээсээ expo icon гэж хайна. Оруулахдаа
      headerRight: () => ( <View> энд оруулах зүйлээ бичиж өгнө </View> )   */
-    }, [navigation]);
-    return (
-      <View>
-        <PagerView
-          onPageSelected={onPageChange}
-          style={styles.pagerView}
-          initialPage={0}
+  }, [navigation]);
+  return (
+    <View style={styles.container}>
+      {/* Tab buttons */}
+      <View style={styles.btnContainer}>
+        <TouchableOpacity
+          style={[styles.btn, selectedTab === 0 && styles.active]}
         >
-          {/* Zuragtai huudas */}
-          <View key="1" style={styles.postContainer}>
-            {data.map((post) => (
-              <Link href={"/post/" + post.id} asChild>
-                <TouchableOpacity style={styles.imgBtn}>
-                  <Image source={{ uri: post.img }} style={styles.image} />
-                </TouchableOpacity>
-              </Link>
-            ))}
-          </View>
-
-          <View key="2">
-            <Text>Second page</Text>
-          </View>
-        </PagerView>{" "}
+          <Text> Chats </Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={[styles.btn, selectedTab === 1 && styles.active]}
+        >
+          <Text>Rooms</Text>
+        </TouchableOpacity>
       </View>
-    );
-  };
+      {/* Tab content */}
+      <PagerView
+        onPageSelected={onPageChange}
+        style={styles.pagerView}
+        initialPage={0}
+      >
+        {/* Zuragtai huudas */}
+        <View key="1" style={styles.postContainer}>
+          <Text> duhk </Text>
+          {/* {data.map((post) => (
+            <Link href={"/post/" + post.id} asChild>
+              <TouchableOpacity style={styles.imgBtn}>
+                <Image source={{ uri: post.img }} style={styles.image} />
+              </TouchableOpacity>
+            </Link>
+          ))} */}
+        </View>
+
+        <View key="2">
+          <Text>Second page</Text>
+        </View>
+      </PagerView>
+    </View>
+  );
 };
+
 export default Dm;
 
 const styles = StyleSheet.create({
   row: {
     flexDirection: "row" /* чиглэл нь хэвтээ байх ёстой. */,
     gap: 8 /* дотор нь байгаа элементүүдийн дотор нь зай авч байгаа */,
+  },
+  container: {
+    padding: 8,
+    flex: 1,
   },
   imgBtn: {
     width: "32%",

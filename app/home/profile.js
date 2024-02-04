@@ -35,4 +35,39 @@ const styles = StyleSheet.create({
     padding: 8,
     flex: 1,
   },
+  imgBtn: {
+    width: "32%",
+    aspectRatio: 1,
+    height: 1,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+  },
+  postContainer: {
+    flexDirection: "row",
+    justifyContent: "flex-start",
+    gap: 3,
+    flexWrap: "wrap",
+  },
+  btn: {
+    flex: 1,
+    alignItems: "center",
+    paddingBottom: 16,
+    paddingTop: 14,
+  },
+  active: {
+    borderBottomWidth: 2,
+  },
+  btnContainer: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+  },
+  img: { backgroundColor: "black" },
+  container: {
+    flex: 1,
+  },
+  pagerView: {
+    flex: 1,
+  },
 });

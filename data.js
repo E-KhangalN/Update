@@ -1,11 +1,11 @@
 export const about = {
   userId: "lemonboy",
-  name: "Хишигсүрэн",
-  img: "https://randomuser.me/api/portraits/men/26.jpg",
-  bio1: "Код сурж байгаа 14 настайs",
-  bio2: "14-р сургууль",
-  followers: 1,
-  following: 100,
+  name: "Э. Хангал ",
+  img: "https://understandingecommerce.com/wp-content/uploads/2020/05/Common-Screen-Sharing-Problems-and-How-to-Fix-Them.jpg",
+  bio1: "Тавтай морилно уу 🤗",
+  bio2: " Заримдаа хэдхэн секунд л зориг гаргахад амьдралаа тэр чигээр нь өөрчилж чадна. ✭✭✭",
+  followers: 202,
+  following: 1,
   postNum: 5,
 };
 export const postData = [
