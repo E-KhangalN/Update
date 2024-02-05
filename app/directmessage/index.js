@@ -1,9 +1,11 @@
 // Messenjer лүү ороход шууд харагддаг хэсэг буюу нүүр хуудасын хэсэг энд байрлана. Үүнийг харуулахыг индэкс дотроо бичнэ. Энэ. Товчлол нь rnfes.
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React, { useEffect, useState } from "react";
-import { useNavigation } from "expo-router";
+import { Link, useNavigation } from "expo-router";
 import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import PagerView from "react-native-pager-view";
+import { chats } from "../../data";
+import DmItem from "../src/components/DmItem";
 // Chat screen
 const Dm = () => {
   {
@@ -71,14 +73,21 @@ const Dm = () => {
       >
         {/* Zuragtai huudas */}
         <View key="1" style={styles.postContainer}>
-          <Text> duhk </Text>
-          {/* {data.map((post) => (
-            <Link href={"/post/" + post.id} asChild>
-              <TouchableOpacity style={styles.imgBtn}>
-                <Image source={{ uri: post.img }} style={styles.image} />
-              </TouchableOpacity>
-            </Link>
-          ))} */}
+          {chats.map(
+            (
+              chat /*энд chats -аар давтана. нэг ширхэг chat ороод ирэхээр түнийг чатнууд гэсэн дата бас id 
+          руу нь үсэргэчих. тэгээд өөрийн стайлаа харуулчих гэж байна DmItem компонентийг бид харуулна үүн дотор харуулахыг 
+          хүссэн зүйлс маань бий.*/
+            ) => (
+              <Link href={"/chats/" + chat.id} asChild>
+                <TouchableOpacity>
+                  <DmItem data={chat} />
+                  {/*үүн нь рүүгээ бид ямар мэдээлэл дамжуулах вэ гэвэл chats -ийн мэдээллүүдийг дамжуулна.
+                   */}
+                </TouchableOpacity>
+              </Link>
+            )
+          )}
         </View>
 
         <View key="2">

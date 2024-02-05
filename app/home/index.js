@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from "react-native";
+import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
+import { postData, stories } from "../../data";
+import PostDetail from "../src/components/profile/PostDetail";
+import Story from "../src/components/story";
 
-const Home = () => {
+const home = () => {
+  const list = postData;
   return (
-    <View>
-      <Text>Нүүр хуудас</Text>
-    </View>
+    <ScrollView style={{ flex: 1 }}>
+      <Story stories={stories} />
+      {list.map((data) => (
+        <PostDetail data={data} />
+      ))}
+    </ScrollView>
   );
 };
 
-export default Home;
+export default home;
 
 const styles = StyleSheet.create({});

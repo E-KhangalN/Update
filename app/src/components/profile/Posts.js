@@ -3,7 +3,7 @@ import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import PagerView from "react-native-pager-view";
 import { Link } from "expo-router";
 
-import Post from "./Post";
+import Post from "./PostImage";
 const postImg = require("../../assets/iimg/userIcon.png");
 const userImg = require("../../assets/iimg/postIcon.png");
 const Posts = ({ data }) => {
