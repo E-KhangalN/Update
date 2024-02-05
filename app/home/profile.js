@@ -7,6 +7,8 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import Posts from "../src/components/profile/PostDetail";
+import About from "../src/components/profile/About";
 import { about, postData } from "../../data";
 const Profile = () => {
   return (

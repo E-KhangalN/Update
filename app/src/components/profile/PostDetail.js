@@ -1,6 +1,7 @@
 import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
 import { Link } from "expo-router";
 import React from "react";
+
 import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 const PostDetail = ({ data }) => {
   const postId = data.id;
