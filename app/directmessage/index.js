@@ -6,6 +6,7 @@ import { AntDesign, FontAwesome } from "@expo/vector-icons";
 import PagerView from "react-native-pager-view";
 import { chats } from "../../data";
 import DmItem from "../src/components/DmItem";
+import { ScrollView } from "react-native-gesture-handler";
 // Chat screen
 const Dm = () => {
   {
@@ -72,7 +73,9 @@ const Dm = () => {
         initialPage={0}
       >
         {/* Zuragtai huudas */}
-        <View key="1" style={styles.postContainer}>
+        {/*хэрхэн нүүрийг, хуудсыг скролтой болгох вэ гэвэл уг скролдох хэсгийг хүрээлж буй view-ийг ScrollView гэж тавиад
+        мөн стайлсынх нь style -ийг contentContainerStyle гэж тавина. */}
+        <ScrollView key="1" contentContainerStyle={styles.postContainer}>
           {chats.map(
             (
               chat /*энд chats -аар давтана. нэг ширхэг chat ороод ирэхээр түнийг чатнууд гэсэн дата бас id 
@@ -80,16 +83,13 @@ const Dm = () => {
           хүссэн зүйлс маань бий.*/
             ) => (
               <Link href={"/chats/" + chat.id} asChild>
-                <TouchableOpacity>
-                  <DmItem data={chat} />
-                  {/*үүн нь рүүгээ бид ямар мэдээлэл дамжуулах вэ гэвэл chats -ийн мэдээллүүдийг дамжуулна.
-                   */}
-                </TouchableOpacity>
+                <DmItem data={chat} />
+                {/*үүн нь рүүгээ бид ямар мэдээлэл дамжуулах вэ гэвэл chats -ийн мэдээллүүдийг дамжуулна.
+                 */}
               </Link>
             )
           )}
-        </View>
-
+        </ScrollView>
         <View key="2">
           <Text>Second page</Text>
         </View>
@@ -119,10 +119,11 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   postContainer: {
-    flexDirection: "row",
+    flexDirection: "column",
     justifyContent: "flex-start",
     gap: 3,
     flexWrap: "wrap",
+    padding: 8,
   },
   btn: {
     flex: 1,
