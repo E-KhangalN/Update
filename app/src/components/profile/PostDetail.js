@@ -7,14 +7,22 @@ const PostDetail = ({ data }) => {
   const postId = data.id;
   const commentLenght = data.comments.length;
   const firstLike = data.likedBy[0];
-
   const first3Like = data.likedBy.slice(0, 3);
   return (
     <View>
-      <View style={[styles.row, styles.container, { paddingVertical: 5 }]}>
-        <Image source={{ uri: data.profileImg }} style={[styles.profileImg]} />
-        <Text style={styles.userId}> {data.userId}</Text>
-      </View>
+      <Link
+        style={[styles.row, styles.container, { paddingVertical: 5 }]}
+        href={"/profile/" + data.userId}
+        asChild
+      >
+        <TouchableOpacity>
+          <Image
+            source={{ uri: data.profileImg }}
+            style={[styles.profileImg]}
+          />
+          <Text style={styles.userId}> {data.userId}</Text>
+        </TouchableOpacity>
+      </Link>
       <Image
         source={{ uri: data.img }}
         style={{ width: "100%", aspectRatio: 1 }}
