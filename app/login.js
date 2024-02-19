@@ -11,6 +11,7 @@ import { StatusBar } from "expo-status-bar";
 import { TextInput } from "react-native-gesture-handler";
 const logoImg = require("../app/src/assets/logoinst.png");
 import { Entypo } from "@expo/vector-icons";
+import { signup } from "./src/service/authentication";
 
 const Login = () => {
   /* TextInput дээр бичсэн юмаа хадгална. Sign up дарахад бүртгэл үүсгэнэ. Уг 2 TextInput дээр бичсэн зүйлсийг хадгалах ёстой. Хадгалахын тулд тус 
@@ -29,8 +30,10 @@ const Login = () => {
   };
   /*3.1    Харин одоо sign up хийхэд бид нэг юм хийх ёстой. Үүнийхээ функцыг sign up гэж нэрлэе. Sign up дээр бид email, password 2 -оо барьж аваад 
 цааш нь явуулах ёстой. Энэ 2 утга маань стэйт рүү орсон эсэхийг харцгаая. Үр дүнгээ console дээрээ харна жүү. */
-  const signup = () => {
-    console.log(email, password);
+  const handleSignup = async () => {
+    // console.log(email, password);
+    const response = await signup(email, password);
+    console.log("response", response);
   };
 
   /*1.1  Харин одоо юм бичихэд уг 2 стэйтруугаа хадгалах түүнийг хэрхэн хийх талаар авч үзье.  */
@@ -67,7 +70,7 @@ const Login = () => {
             <Entypo name="eye" size={24} color="black" />
           </TouchableOpacity>
         </View>
-        <TouchableOpacity style={styles.button} onPress={signup}>
+        <TouchableOpacity style={styles.button} onPress={handleSignup}>
           {/*3.2    Дарах юм бол signup хийнэ гэсэн үг.*/}
           <Text style={styles.btnText}> Sign up</Text>
         </TouchableOpacity>
@@ -114,3 +117,12 @@ const styles = StyleSheet.create({
   },
 });
 /*хард хэр их юм хадалалахыг хэлнэ. рам гэдэг нь зэрэг олон юм оруулж ажлуулах. сепү гэдэг нь i3 ,... хэлж байгаа. */
+/* 4.1   login дахь процессыг тайлбарлая. Цаанаа бидний оруулсан хэрэглэгчийн нэвтрэх нэр болон пасспортыг нэг газар хадгална. 
+ бүртгүүлэнгүүт дараа нь өөр утаснаас ч юм уу нэвтрэхэд нөгөө хадгалсан газраас маань авч ирээд энэ хүн маань 
+ зөв пасспорт оруулж байна уу гэж шалгах хэрэг гарна. Тэр процессыг шалгахад backend гэсэн ойлголт орж ирдэг.
+ front-end гэдэг бидний хийж байсан хүмүүсийн нүдэнд харагдах хэсэг. Тэр APIs гээд нэг зөөгч буюу хүсэлтүүд (гар утасны апп гэх мэтээр бол) дамжаад backend буюу гал тогоо руу очно. Гал тогоо
+ хоол хийхдээ хөргөгч буюу database ээс мэдээллүүдээ буюу хүнсээ авч ирнэ. Тэгж байгаад хоолоо хийнэ. 
+ өмнөх шат дамжлагуудаа дамжаад буцаад хоол идэх газар луугаа буюу frontend рүү ирнэ. 
+ өөрөөр хэлбэл нэвтрэх нэр болон пасспортыг чинь database рүү хийнэ гэж ойлгож болно. ахиад нэвтрэхэд backendees мэдээлэл олчихлоо гээд одоо үүнийг нэвтрүүли гэсэн юм болдог гэсэн үг. 
+ 4.2  Googliin firebase гээд backend -ийн кодыг нэг бүртчлэн бичихгүйгээр бичээд бэлдчихсэн зүйлийг ашиглаад аппаа холбоод нэвтрээд датагаа холбоод гэсэн тийм зүйл байгаа. 
+ Бид энэ удаа үүний нэвтрэлтийг ашиглана (aunthentication).  Эхлээд expo (гар утасны апп дээрээ firebase) -ийг холбоно гэсэн үг. Холбоход  хэд хэдэн алхам бий. expo firebase гэж хайж ороод алхамуудаа гүйцэтгэнэ. */
